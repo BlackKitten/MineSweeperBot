@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="D:/projects/neuroph-2.9/neuroph-2.9/neuroph-adapters-2.9.jar"/>
+	<classpathentry kind="lib" path="D:/projects/neuroph-2.9/neuroph-2.9/neuroph-contrib-2.9.jar"/>
+	<classpathentry kind="lib" path="D:/projects/neuroph-2.9/neuroph-2.9/neuroph-core-2.9.jar"/>
+	<classpathentry kind="lib" path="D:/projects/neuroph-2.9/neuroph-2.9/neuroph-ocr-2.9.jar"/>
+	<classpathentry kind="lib" path="D:/projects/neuroph-2.9/neuroph-2.9/neuroph-samples-2.9.jar"/>
+	<classpathentry kind="lib" path="D:/projects/neuroph-2.9/neuroph-2.9/libs/ajt-2.9.jar"/>
+	<classpathentry kind="lib" path="D:/projects/neuroph-2.9/neuroph-2.9/libs/javaml-0.1.7.jar"/>
+	<classpathentry kind="lib" path="D:/projects/neuroph-2.9/neuroph-2.9/libs/slf4j-api-1.7.5.jar"/>
+	<classpathentry kind="lib" path="D:/projects/neuroph-2.9/neuroph-2.9/libs/weka.jar"/>
+	<classpathentry kind="lib" path="D:/projects/neuroph-2.9/neuroph-2.9/libs/android-x.x.jar"/>
+	<classpathentry kind="lib" path="D:/projects/neuroph-2.9/neuroph-2.9/libs/slf4j-nop-1.7.6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
