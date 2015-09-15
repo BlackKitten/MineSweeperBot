@@ -24,7 +24,7 @@ public class MineSweeperPlayer {
 	public MineSweeperPlayer(MineHistoryDataSet mHist) throws AWTException, ImageSplitterException, IOException{
 		this.mRecog=new MineSweeperRecog("backup_0,00000.nnet");
 		this.mHist=mHist;
-		this.nn=NeuralNetwork.createFromFile(new File("MineSolver2.nnet"));
+		this.nn=NeuralNetwork.createFromFile(new File("MineSolver3_it17.nnet"));
 	}
 	public void start() throws IOException, ImageSplitterException, AWTException, InterruptedException{
 		try

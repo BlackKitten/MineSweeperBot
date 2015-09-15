@@ -17,10 +17,10 @@ public class NNHandler {
 	}
 	
 	private MultiLayerPerceptron createNN(){
-		MultiLayerPerceptron nn= new MultiLayerPerceptron(482,200,100,1);
+		MultiLayerPerceptron nn= new MultiLayerPerceptron(482,100,50,1);
 		DynamicBackPropagation rule=new DynamicBackPropagation();
-		rule.setMaxIterations(1000);
-		rule.setMaxError(0.1);
+		rule.setMaxIterations(10000);
+		rule.setMaxError(0.01);
 		nn.setLearningRule(rule);
 		return nn;
 	}
@@ -48,8 +48,11 @@ public class NNHandler {
 		return nn.getOutput()[0];
 	}
 
-	public String getInfo() {
-		return ""+nn.getLearningRule().getPreviousEpochError()+"\n"+nn.getLearningRule().getCurrentIteration();
+	public String[] getInfo() {
+		String s1=""+nn.getLearningRule().getPreviousEpochError();
+		String s2=""+nn.getLearningRule().getCurrentIteration();
+		String[] s_all={s1,s2};
+		return s_all;
 	}
 	public Thread.State getState(){
 		return nn.getLearningThread().getState();
