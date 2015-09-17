@@ -5,9 +5,8 @@ import org.neuroph.core.data.DataSet;
 import org.neuroph.nnet.MultiLayerPerceptron;
 import org.neuroph.nnet.learning.DynamicBackPropagation;
 
-public class NNHandler {
-	private MultiLayerPerceptron nn;
-	private DataSet ds;
+public class NNHandler extends NNHandler_base{
+
 	public NNHandler(){
 		this.nn=createNN();
 	}
@@ -16,7 +15,7 @@ public class NNHandler {
 		this.nn=(MultiLayerPerceptron)MultiLayerPerceptron.createFromFile(filename);
 	}
 	
-	private MultiLayerPerceptron createNN(){
+	protected MultiLayerPerceptron createNN(){
 		MultiLayerPerceptron nn= new MultiLayerPerceptron(482,100,50,1);
 		DynamicBackPropagation rule=new DynamicBackPropagation();
 		rule.setMaxIterations(10000);
@@ -25,19 +24,7 @@ public class NNHandler {
 		return nn;
 	}
 	
-	public void loadDataSet(DataSet d){
-		this.ds=d;
-	}
 	
-	public void learn(){
-		this.ds.shuffle();	
-		nn.learnInNewThread(this.ds);
-		nn.calculate();
-	}
-	
-	public void toFile(String filename){
-		nn.save(filename);
-	}
 	public double calculateProb(int x,int y,double[] field){
 		double[] dbl_input1={(double)x,(double)y};
 		double[] dbl_input = new double[dbl_input1.length+field.length];
@@ -56,6 +43,9 @@ public class NNHandler {
 	}
 	public Thread.State getState(){
 		return nn.getLearningThread().getState();
+	}
+	public void toFile(){
+		this.save();
 	}
 	
 	public void save(){
