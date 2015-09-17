@@ -14,7 +14,7 @@ public class ms {
 	public static void main(String[] args) throws IOException, ImageSplitterException, AWTException, InterruptedException {
 		MineHistoryDataSet mHist = new MineHistoryDataSet();
 		MineSweeperPlayer player = new MineSweeperPlayer(mHist);	
-		for(int i=0;i<100;i++){
+		for(int i=0;i<1;i++){
 		player.start();
 		Robot robot=new Robot();
 		robot.keyPress(KeyEvent.VK_ALT);
