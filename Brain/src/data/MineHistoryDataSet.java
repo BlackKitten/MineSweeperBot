@@ -9,14 +9,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
-public class MineHistoryDataSet {
+public class MineHistoryDataSet extends DataSetHandler {
 	
-	private String results="";
+	
 	boolean toggle=false;
 	
 	//write out state
 	public MineHistoryDataSet(){
-		
+		super();
 	}
 	
 	public void addToResults(int x,int y,MineField m){
@@ -30,15 +30,5 @@ public class MineHistoryDataSet {
 		}
 	}
 	
-	public void writeToFile(String str_filename) throws IOException{
-		writeToFile(results,str_filename);
-	}
-	
-	private void writeToFile(String str_printsel,String filename) throws IOException{
-		
-		PrintWriter pr = new PrintWriter(new BufferedWriter(new FileWriter(new File(filename),true)));
-		pr.println(str_printsel);
-		pr.flush();
-		pr.close();
-	}
+
 }

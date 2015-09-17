@@ -54,7 +54,7 @@ public class MineSweeperPlayer {
 		
 		//this.mHist.addToResults(mf.x, mf.y, field, );
 	}
-	private MineFieldField getLowestProbMineField(MineField m) throws GameOverException{
+	protected MineFieldField getLowestProbMineField(MineField m) throws GameOverException{
 		MineFieldField lowestProb=null;
 		double double_lowestProb=1;
 		for (MineFieldField[] mFieldA : m.getFields()){
@@ -78,7 +78,7 @@ public class MineSweeperPlayer {
 		}
 		return lowestProb;
 	}
-	private double getProb4XY(int x,int y,MineField m){				
+	protected double getProb4XY(int x,int y,MineField m){				
 		double[] dbl_input1={(double)x,(double)y};
 		double[] dbl_input = new double[dbl_input1.length+m.toDouble().length];
 		System.arraycopy(dbl_input1, 0, dbl_input, 0, dbl_input1.length);

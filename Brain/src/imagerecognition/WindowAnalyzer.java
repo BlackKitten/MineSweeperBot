@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 
 import data.MineField;
 import data.MineFieldField;
+import data.MineField_v2;
 import util.ImageSplitter;
 import util.ImageSplitterException;
 import util.ScreenCapture;
@@ -26,7 +27,7 @@ public class WindowAnalyzer {
 		BufferedImage image = captureScreen();
 		splitter = new ImageSplitter();
 		this.int3_dimensions = splitter.getDimensions(image);
-		mineField = new MineField(nn);
+		mineField = new MineField_v2(nn);
 		for (int x = 0; x < int3_dimensions.length; x++) {
 			for (int y = 0; y < int3_dimensions[x].length; y++) {
 				mineField.getField(x, y).x = int3_dimensions[x][y][0];

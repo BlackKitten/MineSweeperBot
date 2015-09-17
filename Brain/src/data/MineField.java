@@ -8,10 +8,10 @@ public class MineField {
 	
 	public MineField(NeuralNetworkHandler nn){
 		this.nn=nn;
-		mineFields=new MineFieldField[30][16];
+		mineFields=new MineFieldField_v2[30][16];
 		for(int i=0;i<30;i++){
 			for(int j=0;j<16;j++){
-				mineFields[i][j]=new MineFieldField(nn,i,j);
+				mineFields[i][j]=new MineFieldField_v2(nn,i,j);
 				//mineFields[i][j].x=i;
 				//mineFields[i][j].y=j;
 			}
