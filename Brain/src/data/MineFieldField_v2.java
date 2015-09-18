@@ -60,9 +60,9 @@ public class MineFieldField_v2 extends MineFieldField {
 		throw new NullPointerException("Field not found among neibors");
 	}
 
-	class NeigBourField{
+	public class NeigBourField{
 		//field=null if this neigbor does not exist 4 outerobject.
-		MineFieldField_v2 field;
+		public MineFieldField_v2 field;
 		//probability neigborField containing mines, according to the outerObject,
 		//-1 : invalid square (eg outside of minefield border) or not set
 		//0-1:probablitity of subjectsquare containing a mine according to this field.

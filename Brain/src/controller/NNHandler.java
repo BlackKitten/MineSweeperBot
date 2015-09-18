@@ -52,3 +52,5 @@ public class NNHandler extends NNHandler_base{
 		nn.save("MineSolver3_it"+nn.getLearningRule().getCurrentIteration()+".nnet");
 	}
 }
+
+

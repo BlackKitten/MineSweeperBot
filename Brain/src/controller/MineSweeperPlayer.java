@@ -5,6 +5,7 @@ import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.io.File;
 import java.io.IOException;
+import java.nio.DoubleBuffer;
 
 import net.sf.javaml.utils.ArrayUtils;
 
@@ -20,21 +21,25 @@ public class MineSweeperPlayer {
 
 	private MineSweeperRecog mRecog;
 	private MineHistoryDataSet mHist;
-	private NeuralNetwork nn;
+	protected NeuralNetwork nn;
 	public MineSweeperPlayer(MineHistoryDataSet mHist) throws AWTException, ImageSplitterException, IOException{
-		this.mRecog=new MineSweeperRecog("backup_0,00000.nnet");
+		this.mRecog=new MineSweeperRecog("MineRecognizer.nnet");
 		this.mHist=mHist;
-		this.nn=NeuralNetwork.createFromFile(new File("MineSolver3_it17.nnet"));
+		this.nn=createMineSolverNN();
+	}
+	protected NeuralNetwork createMineSolverNN(){
+		return NeuralNetwork.createFromFile(new File("MineSolver3_it17.nnet"));
 	}
 	public void start() throws IOException, ImageSplitterException, AWTException, InterruptedException{
 		try
 		{
 			while(true){	
 			read();
-			analyze();						
+			analyze();
+			Thread.sleep(100);
 			}
 		}catch(GameOverException e){
-			this.mHist.addToResults(0);
+			this.mHist.addToResults(1);
 		System.out.println("gameOver");
 	}
 	}
@@ -47,7 +52,7 @@ public class MineSweeperPlayer {
 		MineField field=this.mRecog.getField();
 	
 		MineFieldField mf=getLowestProbMineField(field);
-		this.mHist.addToResults(1); //add succes to previous move
+		this.mHist.addToResults(0); //add succes to previous move
 		this.mHist.addToResults(mf.idx,mf.idy,field); //add current move
 		action(mf.x+mf.widht/2,mf.y+mf.height/2);	
 		action(mf.x+mf.widht/2,mf.y+mf.height/2);	
@@ -61,13 +66,17 @@ public class MineSweeperPlayer {
 			for (MineFieldField mField : mFieldA){
 				//prob -1 -> field is already clicked
 				if(mField.getValue()==-1){
-				if(lowestProb!=null){
+					double double_prob=getProb4XY(mField.idx, mField.idy, m);
+					if(lowestProb!=null){
 					//if(mField.getProb()<lowestProb.getProb()){
-					if(getProb4XY(mField.idx, mField.idy, m) < double_lowestProb){
+					
+					if(double_prob < double_lowestProb){
 						lowestProb=mField;
+						double_lowestProb=double_prob;
 					}
 				}else{
 					lowestProb=mField;
+					double_lowestProb=double_prob;
 					}
 				}else{
 					if(mField.getValue()==9){

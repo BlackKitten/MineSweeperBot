@@ -1,5 +1,6 @@
 package controller;
 
+import org.neuroph.core.NeuralNetwork;
 import org.neuroph.core.data.DataSet;
 import org.neuroph.nnet.MultiLayerPerceptron;
 
@@ -9,6 +10,10 @@ public abstract class NNHandler_base {
 	
 	public NNHandler_base(){
 		this.nn=createNN();
+	}
+	
+	public NNHandler_base(String filename){
+		this.nn=(MultiLayerPerceptron) NeuralNetwork.createFromFile(filename);
 	}
 
 	protected abstract MultiLayerPerceptron createNN();
@@ -30,5 +35,18 @@ public abstract class NNHandler_base {
 	public void toFile(){
 		nn.save("default_filename");
 	}
+
+	public void stop() {
+		nn.stopLearning();
+		
+	}
+
+	
+
+	
+
+	
+
+	
 
 }
