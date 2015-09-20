@@ -1,4 +1,4 @@
-package imagerecognition;
+package util;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -24,7 +24,7 @@ public class organise {
 		 
 		 
 		    // load trained neural network saved with Neuroph Studio (specify some existing neural network file here)
-		    NeuralNetwork nnet = NeuralNetwork.createFromFile("backup_0,00000.nnet"); // load trained neural network saved with Neuroph Studio
+		    NeuralNetwork nnet = NeuralNetwork.createFromFile("MineRecognizer.nnet"); // load trained neural network saved with Neuroph Studio
 		    // get the image recognition plugin from neural network
 		    
 		    //nnet.addPlugin(new ImageRecognitionPlugin(new Dimension(5, 5)));

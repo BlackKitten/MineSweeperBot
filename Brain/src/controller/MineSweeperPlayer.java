@@ -19,11 +19,11 @@ import imagerecognition.MineSweeperRecog;
 
 public class MineSweeperPlayer {
 
-	private MineSweeperRecog mRecog;
+	protected MineSweeperRecog mRecog;
 	private MineHistoryDataSet mHist;
 	protected NeuralNetwork nn;
 	public MineSweeperPlayer(MineHistoryDataSet mHist) throws AWTException, ImageSplitterException, IOException{
-		this.mRecog=new MineSweeperRecog("MineRecognizer.nnet");
+		this.mRecog=new MineSweeperRecog("backup_0,00001.nnet");
 		this.mHist=mHist;
 		this.nn=createMineSolverNN();
 	}
@@ -40,7 +40,6 @@ public class MineSweeperPlayer {
 			}
 		}catch(GameOverException e){
 			this.mHist.addToResults(1);
-		System.out.println("gameOver");
 	}
 	}
 	

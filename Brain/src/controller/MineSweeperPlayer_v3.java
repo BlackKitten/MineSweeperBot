@@ -19,7 +19,7 @@ public class MineSweeperPlayer_v3 extends MineSweeperPlayer {
 	}
 	
 	protected NeuralNetwork createMineSolverNN(){
-		return NeuralNetwork.createFromFile(new File("backup_0,10839.nnet"));
+		return NeuralNetwork.createFromFile(new File("backup_0,09319.nnet"));
 	}
 	
 	protected double getProb4XY(int x,int y,MineField m){

@@ -9,8 +9,8 @@ import org.neuroph.core.data.DataSet;
 public class test {
 	
 	public static void main(String[] args) throws InterruptedException{
-		DataSet ds=DataSet.load("100minedataset01234ub5x5.tset");
-		ds.saveAsTxt("blablabla.txt", ",");
+		DataSet ds=DataSet.load("100minedataset012345678ub5x5.tset");
+		//ds.saveAsTxt("blablabla.txt", ",");
 		createMineNeuralNet cnn=new createMineNeuralNet(ds);
 		cnn.learn();
 		

@@ -70,6 +70,7 @@ public class WindowAnalyzer {
 		}
 
 	}
+
 	
 	public void updateMineField() throws IOException, ImageSplitterException, AWTException{
 		analyzeScreenCapture(captureScreen());

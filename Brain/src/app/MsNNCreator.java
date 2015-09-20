@@ -7,7 +7,7 @@ import controller.Controller;
 public class MsNNCreator {
 
 	public static void main(String[] args) {
-		Controller troller=new Controller(DataSet.createFromFile("test_v3_5.txt", 25, 1, "\t",false));
+		Controller troller=new Controller(DataSet.createFromFile("test_v3_7.txt", 25, 1, "\t",false));
 		troller.startView();
 
 	}

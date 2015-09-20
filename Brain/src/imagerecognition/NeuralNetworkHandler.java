@@ -24,15 +24,15 @@ public class NeuralNetworkHandler {
 		double value=0;
 		for(int i=0;i<output.length;i++){
 			if(output[i]>value){
-				if(i<5){
+				if(i<10){
 					key=i;
 				}else{
-					if(i==5){
+					if(i==10){
 						key=-1;
 					}
-					if(i==6){
-						key=9;
-					}
+					//if(i==6){
+					//	key=9;
+					//}
 				}
 				value=output[i];
 			}

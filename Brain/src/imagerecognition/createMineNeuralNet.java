@@ -20,14 +20,14 @@ public class createMineNeuralNet {
 		dataset.shuffle();
 		//nn = new MultiLayerPerceptron(dataset.getInputSize(), 100 , dataset.getOutputSize());
 		
-		nn = (MultiLayerPerceptron) NeuralNetwork.createFromFile(new File("backup_0,00000.nnet"));
-		Neuron[] neur=nn.getOutputNeurons();
-		for(int i=0;i<5;i++){
-			System.out.println(i);
-			neur[i].setLabel(""+i);
-		}
-		neur[5].setLabel("u");
-		neur[6].setLabel("b");
+		nn = (MultiLayerPerceptron) NeuralNetwork.createFromFile(new File("MineRecognizer.nnet"));
+		//Neuron[] neur=nn.getOutputNeurons();
+		//for(int i=0;i<5;i++){
+		//	System.out.println(i);
+		//	neur[i].setLabel(""+i);
+		//}
+		//neur[5].setLabel("u");
+		//neur[6].setLabel("b");
 		
 		setLearningRule(0.001);
 		//createInputLayer();

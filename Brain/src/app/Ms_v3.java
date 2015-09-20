@@ -20,7 +20,7 @@ public class Ms_v3 {
 		MineSweeperPlayer player=new MineSweeperPlayer_v3(mHist);
 		Ms_base mb=new Ms_base(player);
 		mb.start(1000);
-		mHist.writeToFile("test_v3_6.txt");
+		mHist.writeToFile("test_v3_7.txt");
 
 	}
 

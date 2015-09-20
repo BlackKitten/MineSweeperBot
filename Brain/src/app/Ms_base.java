@@ -17,7 +17,9 @@ public class Ms_base {
 	public void start(int times) throws IOException, ImageSplitterException, AWTException, InterruptedException{
 		for(int i=0;i<times;i++){
 			mp.start();
+			System.out.println("finished "+i);
 			if(i<times-1){
+			
 			Thread.sleep(100);
 			Robot robot=new Robot();
 			robot.keyPress(KeyEvent.VK_ALT);
