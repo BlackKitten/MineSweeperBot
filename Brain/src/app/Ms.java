@@ -11,6 +11,12 @@ import controller.MineSweeperPlayer_v2;
 import data.MineHistoryDataSet;
 import data.MineHistoryDataSet_v2;
 
+/**
+ * 
+ * @author blackkitten
+ * uses a serial representation of the entire minefield to predict the probability of a square being a mine for the entire field.
+ *
+ */
 public class Ms {
 
 	public static void main(String[] args) throws IOException, ImageSplitterException, AWTException, InterruptedException {

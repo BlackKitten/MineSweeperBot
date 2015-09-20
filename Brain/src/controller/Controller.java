@@ -10,7 +10,7 @@ public class Controller {
 	protected NNHandler_MineSolverV2 nnhandler;
 	protected NNviewer view;
 	public Controller(DataSet d){
-		nnhandler=new NNHandler_MineSolverV2();
+		nnhandler=new NNHandler_MineSolverV3();
 		nnhandler.loadDataSet(d);
 		view=new NNviewer(this);
 	}

@@ -15,6 +15,7 @@ public class NNHandler_MineSolverV2 extends NNHandler_base {
 
 	@Override
 	protected MultiLayerPerceptron createNN() {
+		
 		MultiLayerPerceptron nn= new MultiLayerPerceptron(2,20,20,1);
 		DynamicBackPropagation rule=new DynamicBackPropagation();
 		rule.setMaxIterations(10000);
